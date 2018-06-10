@@ -1,5 +1,7 @@
 node () {
     stage("Preparation") {
         sh "env"
+
+        git url: git@github.com:wxj19880511/jenkins-job-builder-docker.git, branch: master
     }
 }
