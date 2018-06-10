@@ -1,5 +1,5 @@
 node () {
-    workspace("$env.WORKSPACE/$env.BUILD_NUMBER") {
+    dir("$env.WORKSPACE/$env.BUILD_NUMBER") {
         stage("Preparation") {
             sh "env"
 
