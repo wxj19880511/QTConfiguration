@@ -1,4 +1,5 @@
 node () {
+    workspace("$env.WORKSPACE/$env.BUILD_NUMBER")
     stage("Preparation") {
         sh "env"
 
