@@ -1,3 +1,5 @@
 node () {
-    sh "env"
+    stage("Preparation") {
+        sh "env"
+    }
 }
