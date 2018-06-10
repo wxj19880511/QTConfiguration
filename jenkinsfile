@@ -1,8 +1,9 @@
 node () {
-    workspace("$env.WORKSPACE/$env.BUILD_NUMBER")
-    stage("Preparation") {
-        sh "env"
+    workspace("$env.WORKSPACE/$env.BUILD_NUMBER") {
+        stage("Preparation") {
+            sh "env"
 
-        git credentialsId: 'github', url: 'https://github.com/wxj19880511/jenkins-job-builder-docker.git'
+            checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'CIHOME']], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'github', url: 'https://github.com/wxj19880511/jenkins-job-builder-docker.git']]])
+        }
     }
 }
